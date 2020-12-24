@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Form validation</title>
+    <style>
+        input {
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+        <section>
+            <div class="container">
+                <form id="app-form" class="validator">
+                    <div class="">
+                        <label for="phone">phone</label>
+                        <input type="text" id="phone" name="phone" placeholder="phone">
+                    </div>
+                    <div class="">
+                        <label for="email">email</label>
+                        <input type="text" id="email" name="email" placeholder="email">
+                    </div>
+                    <button type="submit" class="btn btn-submit">Submit</button>
+                    <button type="reset" class="btn btn-reset">Reset</button>
+                </form>
+            </div>
+        </section>
+    </div>
+</body>
+
+<script src="plugins/validator/validator.js"></script>
+
+<script>
+    const valid = new Validator({
+        selector: '#app-form',
+        pattern: { 
+            phone : /^\+380\d{9}$/,
+            zip : /\d{5,6}/
+        },
+        method: { // содержит матрицы методов
+            'phone': [
+                ['notEmpty'], // иетод будет проверять что поле не пустое
+                ['pattern', 'phone'] // метод будет определять поле поле по определнному патттерну
+            ],
+
+            'email': [
+                ['notEmpty'],
+                ['pattern', 'email']
+            ]
+        }
+    })
+
+    valid.init();
+</script>
+
+</html>

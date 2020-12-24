@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+
+}
+
+body {
+    background: #d6d1d1;
+}
+
+/* .container {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.validator {
+    display: flex;
+    margin: auto;
+    padding: 4rem;
+    flex-direction: column; 
+    justify-content: center; 
+    max-width: 40%;  
+}
+
+.validator input {
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    padding: 6px;
+    margin-bottom: 1rem;
+}
+
+.validator button {
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    background: #999696;
+} */
