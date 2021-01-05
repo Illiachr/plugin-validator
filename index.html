@@ -18,6 +18,10 @@
             <div class="container">
                 <form id="app-form" class="validator">
                     <div class="">
+                        <label for="email">Имя</label>
+                        <input type="text" id="name" name="name" placeholder="Имя">
+                    </div>
+                    <div class="">
                         <label for="phone">phone</label>
                         <input type="text" id="phone" name="phone" placeholder="phone">
                     </div>
@@ -40,11 +44,15 @@
         selector: '#app-form',
         pattern: { 
             phone : /^\+380\d{9}$/,
-            zip : /\d{5,6}/
+            name : /[аА-яЯёЁ]\s?/g
         },
         method: { // содержит матрицы методов
+            'name': [
+                ['notEmpty'],
+                ['pattern', 'name']
+            ],
             'phone': [
-                ['notEmpty'], // иетод будет проверять что поле не пустое
+                ['notEmpty'], // метод будет проверять что поле не пустое
                 ['pattern', 'phone'] // метод будет определять поле поле по определнному патттерну
             ],
 
